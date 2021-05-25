@@ -19,7 +19,6 @@ import json
     'examples': [
         "-"]},
     allow_private=False)
-
 async def job_close():
   try:
     await userge.send_message(
@@ -32,18 +31,18 @@ async def job_close():
         can_invite_users=True,
       )
     )
-    
-    scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_close, trigger="cron", hour=13, minute=52)
-    scheduler.start()
-    
+
+
+scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
+scheduler.add_job(job_close, trigger="cron", hour=14, minute=5)
+scheduler.start()
+
 @userge.on_cmd("nightmode_on", about={
     'header': "Activate Nightmode In Group",
     'usage': "Ga ada",
     'examples': [
         "-"]},
     allow_private=False)
-
 async def job_open():
   req = requests.get('http://fadhil-s.herokuapp.com/api/random_quotes.php?apikey=dwh20ud9u0q2ijsd092099139jp')
   json = req.json()
@@ -65,7 +64,8 @@ async def job_open():
         can_use_inline_bots=True
       )
     )           
-    
-    scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_open, trigger="cron", hour=14, minute=0)
-    scheduler.start()
+            
+
+scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
+scheduler.add_job(job_open, trigger="cron", hour=14, minute=10)
+scheduler.start()
