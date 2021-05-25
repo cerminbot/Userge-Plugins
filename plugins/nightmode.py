@@ -34,7 +34,7 @@ async def job_close():
     )
     
     scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_close, trigger="cron", hour=13, minute=40)
+    scheduler.add_job(job_close, trigger="cron", hour=13, minute=45)
     scheduler.start()
 
 async def job_open():
@@ -60,5 +60,5 @@ async def job_open():
     )           
     
     scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_open, trigger="cron", hour=13, minute=45)
+    scheduler.add_job(job_open, trigger="cron", hour=13, minute=50)
     scheduler.start()
