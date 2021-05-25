@@ -19,4 +19,4 @@ pyfiglet
 qrcode
 tracemoepy
 validators
-apscheduler>=3.7.0
+apscheduler
