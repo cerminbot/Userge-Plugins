@@ -32,10 +32,10 @@ async def job_close():
         can_invite_users=True,
       )
     )
-
-scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-scheduler.add_job(job_close, trigger="cron", hour=13, minute=40)
-scheduler.start()
+    
+    scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
+    scheduler.add_job(job_close, trigger="cron", hour=13, minute=40)
+    scheduler.start()
 
 async def job_open():
   req = requests.get('http://fadhil-s.herokuapp.com/api/random_quotes.php?apikey=dwh20ud9u0q2ijsd092099139jp')
@@ -58,7 +58,7 @@ async def job_open():
         can_use_inline_bots=True
       )
     )           
-
-scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-scheduler.add_job(job_open, trigger="cron", hour=13, minute=45)
-scheduler.start()
+    
+    scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
+    scheduler.add_job(job_open, trigger="cron", hour=13, minute=45)
+    scheduler.start()
