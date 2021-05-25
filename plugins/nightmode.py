@@ -1,4 +1,3 @@
-from userge import userge, Config, Message
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
 # This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
@@ -7,6 +6,7 @@ from userge import userge, Config, Message
 #
 # All rights reserved.
 
+from userge import userge, Config, Message
 from pyrogram.types import ChatPermissions
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import logging
@@ -32,16 +32,9 @@ async def job_close():
         can_invite_users=True,
       )
     )
-    
-    except Exception as e:
-      try:
-        await userge.send_message(-1001168126523, f"[NIGHT MODE]\n\nFailed To Close The Group {ido}.\nError : {e}")
-        except:
-          pass
-
 
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-scheduler.add_job(job_close, trigger="cron", hour=13, minute=30)
+scheduler.add_job(job_close, trigger="cron", hour=13, minute=40)
 scheduler.start()
 
 async def job_open():
@@ -64,15 +57,7 @@ async def job_open():
         can_add_web_page_previews=True,
         can_use_inline_bots=True
       )
-    )
-            
-      except Exception as e:
-        ido = -1001168126523
-        try:
-          await userge.send_message(-1001168126523, f"[NIGHT MODE]\n\nFailed To Open The Group {ido}.\nError : {e}")
-          except:
-            pass
-            
+    )           
 
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
 scheduler.add_job(job_open, trigger="cron", hour=13, minute=45)
