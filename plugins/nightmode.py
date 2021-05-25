@@ -13,8 +13,8 @@ import logging
 import requests
 import json
 
-@userge.on_cmd("nightmode_off", about={
-    'header': "off Nightmode In Group",
+@userge.on_cmd("nightmode_on", about={
+    'header': "Activate Nightmode In Group",
     'usage': "Ga ada",
     'examples': ["-"]},allow_private=False)
 async def job_close():
@@ -25,11 +25,11 @@ async def job_close():
     )
     
     scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_close, trigger="cron", hour=14, minute=25)
+    scheduler.add_job(job_close, trigger="cron", hour=14, minute=30)
     scheduler.start()
 
-@userge.on_cmd("nightmode_on", about={
-    'header': "Activate Nightmode In Group",
+@userge.on_cmd("nightmode_off", about={
+    'header': "Off Nightmode In Group",
     'usage': "Ga ada",
     'examples': ["-"]},allow_private=False)
 async def job_open():
@@ -44,5 +44,5 @@ async def job_open():
     )
     
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-scheduler.add_job(job_open, trigger="cron", hour=14, minute=30)
+scheduler.add_job(job_open, trigger="cron", hour=14, minute=35)
 scheduler.start()
