@@ -34,7 +34,7 @@ async def job_close():
     )
     
     scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_close, trigger="cron", hour=13, minute=45)
+    scheduler.add_job(job_close, trigger="cron", hour=13, minute=52)
     scheduler.start()
     
 @userge.on_cmd("nightmode_on", about={
@@ -67,5 +67,5 @@ async def job_open():
     )           
     
     scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_open, trigger="cron", hour=13, minute=50)
+    scheduler.add_job(job_open, trigger="cron", hour=14, minute=0)
     scheduler.start()
