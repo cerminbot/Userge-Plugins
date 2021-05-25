@@ -33,11 +33,12 @@ async def job_close():
     'usage': "Ga ada",
     'examples': ["-"]},allow_private=False)
 async def job_open():
-  req = requests.get('http://fadhil-s.herokuapp.com/api/random_quotes.php?apikey=dwh20ud9u0q2ijsd092099139jp')
-  json = req.json()
-  quote = json["data"]["quotes"]
-  author = json["data"]["by"]
-    await userge.send_message(-1001168126523, "`Sekarang sudah jam 6 pagi. Selamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.`\n\n**Quotes Today:**\n"+quote+"\n~ "+author+"\n**Powered By Pyrogram**"
+    req = requests.get('http://fadhil-s.herokuapp.com/api/random_quotes.php?apikey=dwh20ud9u0q2ijsd092099139jp')
+    json = req.json()
+    quote = json["data"]["quotes"]
+    author = json["data"]["by"]
+    await userge.send_message(
+        -1001168126523, "`Sekarang sudah jam 6 pagi. Selamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.`\n\n**Quotes Today:**\n"+quote+"\n~ "+author+"\n**Powered By Pyrogram**"
     )
     await userge.set_chat_permissions(-1001168126523, ChatPermissions(can_send_messages=True, can_send_media_messages=True, can_send_stickers=False, can_send_animations=True, can_invite_users=True, can_add_web_page_previews=True, can_use_inline_bots=True)
     )
