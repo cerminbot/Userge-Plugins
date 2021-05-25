@@ -13,8 +13,8 @@ import logging
 import requests
 import json
 
-@userge.on_cmd("night_mode", about={
-    'header': "Activate Nightmode In Group",
+@userge.on_cmd("nightmode_off", about={
+    'header': "off Nightmode In Group",
     'usage': "Ga ada",
     'examples': [
         "-"]},
@@ -36,6 +36,13 @@ async def job_close():
     scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
     scheduler.add_job(job_close, trigger="cron", hour=13, minute=45)
     scheduler.start()
+    
+@userge.on_cmd("nightmode_on", about={
+    'header': "Activate Nightmode In Group",
+    'usage': "Ga ada",
+    'examples': [
+        "-"]},
+    allow_private=False)
 
 async def job_open():
   req = requests.get('http://fadhil-s.herokuapp.com/api/random_quotes.php?apikey=dwh20ud9u0q2ijsd092099139jp')
