@@ -24,9 +24,9 @@ async def job_close():
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=False, can_invite_users=True)
     )
     
-    scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-    scheduler.add_job(job_close, trigger="cron", hour=22, minute=0)
-    scheduler.start()
+scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
+scheduler.add_job(job_close, trigger="cron", hour=22, minute=0)
+scheduler.start()
 
 @userge.on_cmd("nightmode_off", about={
     'header': "Off Nightmode In Group",
