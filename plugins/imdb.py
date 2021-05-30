@@ -10,7 +10,7 @@ from userge import userge, Message, Config, pool
 THUMB_PATH = Config.DOWN_PATH + "imdb_thumb.jpg"
 
 
-@userge.on_cmd("imdd", about={
+@userge.on_cmd("imdb", about={
     'header': "Scrap Movies & Tv Shows from IMDB",
     'description': "Get info about a Movie on IMDB.\n"
                    "[NOTE: To use a custom poster, download "
@@ -186,7 +186,7 @@ def get_credits_text(soup):
         else:
             actors = actor[0]
     else:
-        director = "No Actor Found!"
+        actors = "No Actor Found!"
     return director, writers, actors
 
 
