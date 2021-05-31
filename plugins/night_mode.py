@@ -15,15 +15,14 @@ import json
 import pytz
 from datetime import datetime
 
-now = datetime.now(pytz.timezone('Asia/Jakarta'))
-
 @userge.on_cmd("nightmode_on", about={
     'header': "Activate Nightmode In Group",
     'usage': "Ga ada",
     'examples': ["-"]},allow_private=False)
 async def job_close():
-    tgl = now.strftime('%y/%m/%d')
-    jam = now.strftime('%I:%M:%S')
+    now = datetime.now(pytz.timezone('Asia/Jakarta'))
+    tgl = now.strftime('%d/%m/%Y')
+    jam = now.strftime('%H:%M:%S')
     await userge.send_message(
       -1001128045651, "📆 Tanggal : "+tgl+"\n⏰ Jam : "+jam+"\n\n**🌃 Mode Malam Aktif**\n\n`Sekarang jam 22:00, Grup ditutup dan akan dibuka esok hari secara otomatis. Selamat beristirahat semuanya!!` \n**Yasir AutoBot**"
     )
@@ -39,8 +38,9 @@ scheduler.start()
     'usage': "Ga ada",
     'examples': ["-"]},allow_private=False)
 async def job_open():
-    tgl = now.strftime('%y/%m/%d')
-    jam = now.strftime('%I:%M:%S')
+    now = datetime.now(pytz.timezone('Asia/Jakarta'))
+    tgl = now.strftime('%d/%m/%Y')
+    jam = now.strftime('%H:%M:%S')
     req = requests.get('http://fadhil-s.herokuapp.com/api/random_quotes.php?apikey=dwh20ud9u0q2ijsd092099139jp')
     json = req.json()
     quote = json["data"]["quotes"]
