@@ -149,7 +149,7 @@ async def tagall_(message: Message):
     'usage': "{tr}instatus"},
     allow_via_bot=True, allow_private=False, only_admins=True)
 async def instatus(message: Message):
-    user = message.client.get_chat_member(message.chat.id, message.from_user.id)
+    user = userge.get_chat_member(message.chat.id, message.from_user.id)
     if user.status in ('administrator', 'creator'):
         sent_message = userge.send_message("**Mengumpulkan informasi user...**")
         recently = 0
