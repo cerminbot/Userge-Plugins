@@ -149,7 +149,7 @@ async def tagall_(message: Message):
     'usage': "{tr}instatus"},
     allow_via_bot=True, allow_private=False, only_admins=True)
 async def instatus(message: Message):
-    sent_message = userge.send_message("**Mengumpulkan informasi user...**")
+    sent_message = userge.send_message(message.chat.id, "**Mengumpulkan informasi user...**")
     recently = 0
     within_week = 0
     within_month = 0
