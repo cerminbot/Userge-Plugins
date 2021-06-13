@@ -25,7 +25,7 @@ async def job_close():
     tgl = now.strftime('%d/%m/%Y')
     jam = now.strftime('%H:%M:%S')
     await userge.send_message(
-      -1001128045651, "📆 Tanggal : "+days[now.weekday()]+", "+tgl+"\n⏰ Jam : "+jam+"\n\n**🌃 Mode Malam Aktif**\n\n`Sekarang jam 22:00, Grup ditutup dan akan dibuka esok hari secara otomatis. Selamat beristirahat semuanya!!` \n**Yasir AutoBot**"
+      -1001128045651, "📆 Tanggal : "+days[now.weekday()]+", "+tgl+"\n⏰ Jam : "+jam+"\n\n**🌗 Mode Malam Aktif**\n`Proses LockDown dimulai, Grup ditutup dan semua member tidak akan bisa mengirim pesan. Selamat beristirahat dan bermimpi indah !!`"
     )
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=False, can_invite_users=True)
     )
@@ -48,7 +48,7 @@ async def job_open():
     quote = json["data"]["quotes"]
     author = json["data"]["by"]
     await userge.send_message(
-        -1001128045651, "📆 Tanggal : `"+days[now.weekday()]+", "+tgl+"`\n⏰ Jam : `"+jam+"`\n\nSekarang sudah jam 6 pagi. Selamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.\n\n**Quotes Today:**\n`"+quote+"\n~ "+author+"`\n**Yasir AutoBot**"
+        -1001128045651, "📆 Tanggal : `"+days[now.weekday()]+", "+tgl+"`\n⏰ Jam : `"+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.\n\n**Quotes Today:**\n`"+quote+"\n~ "+author+"`"
     )
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=True, can_send_media_messages=True, can_send_stickers=False, can_send_animations=True, can_invite_users=True, can_add_web_page_previews=True, can_use_inline_bots=True)
     )
