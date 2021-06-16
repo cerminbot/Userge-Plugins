@@ -24,7 +24,7 @@ async def job_close():
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
     tgl = now.strftime('%d/%m/%Y')
     jam = now.strftime('%H:%M:%S')
-    await userge.send_sticker(-1001128045651, "CAACAgUAAxkDAAEDSH5gtW1RBudUkN8Ibh5H5wY2o0-mAAPmAQACTqoRVhO5Duj-RGYrHgQ")
+    await userge.send_sticker(-1001128045651, "CAACAgQAAxkDAAEDfNhgygZBqbTlbOQ6Gk3CmtD-bnkRDAACLxsAAvEGNAY-qWSFYAqy3R4E")
     await userge.send_message(
       -1001128045651, "📆 Tanggal : "+days[now.weekday()]+", "+tgl+"\n⏰ Jam : "+jam+"\n\n**🌗 Mode Malam Aktif**\n`Proses LockDown dimulai, Grup ditutup dan semua member tidak akan bisa mengirim pesan. Selamat beristirahat dan bermimpi indah !!`"
     )
