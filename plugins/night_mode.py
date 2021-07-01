@@ -44,10 +44,10 @@ async def job_open():
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
     tgl = now.strftime('%d/%m/%Y')
     jam = now.strftime('%H:%M:%S')
-    req = requests.get('http://fadhil-s.herokuapp.com/api/random_quotes.php?apikey=dwh20ud9u0q2ijsd092099139jp')
+    req = requests.get('https://yasirapi.herokuapp.com/api/randomquote?apikey=yasirapi')
     json = req.json()
-    quote = json["data"]["quotes"]
-    author = json["data"]["by"]
+    quote = json["result"]["quotes"]
+    author = json["result"]["author"]
     await userge.send_sticker(-1001128045651, "CAACAgQAAxkDAAEDeJhgyLPTe0shLKykbafLA-rZk3CYZAAC4xoAAvEGNAYXtspUoZE5Nx4E")
     await userge.send_message(
         -1001128045651, "📆 Tanggal : `"+days[now.weekday()]+", "+tgl+"`\n⏰ Jam : `"+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.\n\n**Quotes Today:**\n`"+quote+"\n~ "+author+"`"
