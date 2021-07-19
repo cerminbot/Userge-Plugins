@@ -22,11 +22,12 @@ from datetime import datetime
 async def job_close():
     now = datetime.now(pytz.timezone('Asia/Jakarta'))
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
-    tgl = now.strftime('%d/%m/%Y')
-    jam = now.strftime('%H:%M:%S')
+    month = ['Unknown', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+    tgl = now.strftime('%d')
+    jam = now.strftime('%H:%M')
     await userge.send_sticker(-1001128045651, "CAACAgQAAxkDAAEDfNhgygZBqbTlbOQ6Gk3CmtD-bnkRDAACLxsAAvEGNAY-qWSFYAqy3R4E")
     await userge.send_message(
-      -1001128045651, "📆 Tanggal : "+days[now.weekday()]+", "+tgl+"\n⏰ Jam : "+jam+"\n\n**🌗 Mode Malam Aktif**\n`Proses LockDown dimulai, Grup ditutup dan semua member tidak akan bisa mengirim pesan. Selamat beristirahat dan bermimpi indah !!`"
+      -1001128045651, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ Jam : "+jam+"\n\n**🌗 Mode Malam Aktif**\n`Proses LockDown dimulai, Grup ditutup dan semua member tidak akan bisa mengirim pesan. Selamat beristirahat dan bermimpi indah !!`"
     )
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=False, can_invite_users=True)
     )
@@ -42,15 +43,16 @@ scheduler.start()
 async def job_open():
     now = datetime.now(pytz.timezone('Asia/Jakarta'))
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
-    tgl = now.strftime('%d/%m/%Y')
-    jam = now.strftime('%H:%M:%S')
+    month = ['Unknown', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+    tgl = now.strftime('%d')
+    jam = now.strftime('%H:%M')
     req = requests.get('https://yasirapi.herokuapp.com/api/randomquote?apikey=yasirapi')
     json = req.json()
     quote = json["result"]["quotes"]
     author = json["result"]["author"]
     await userge.send_sticker(-1001128045651, "CAACAgQAAxkDAAEDeJhgyLPTe0shLKykbafLA-rZk3CYZAAC4xoAAvEGNAYXtspUoZE5Nx4E")
     await userge.send_message(
-        -1001128045651, "📆 Tanggal : `"+days[now.weekday()]+", "+tgl+"`\n⏰ Jam : `"+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.\n\n**Quotes Today:**\n`"+quote+"\n~ "+author+"`"
+        -1001128045651, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ "+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.\n\n**Quotes Today:**\n`"+quote+"\n~ "+author+"`"
     )
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=True, can_send_media_messages=True, can_send_stickers=False, can_send_animations=True, can_invite_users=True, can_add_web_page_previews=True, can_use_inline_bots=True)
     )
