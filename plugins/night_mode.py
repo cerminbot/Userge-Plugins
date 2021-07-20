@@ -46,13 +46,12 @@ async def job_open():
     month = ['Unknown', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
     tgl = now.strftime('%d')
     jam = now.strftime('%H:%M')
-    req = requests.get('https://yasirapi.herokuapp.com/api/randomquote?apikey=yasirapi')
+    req = requests.get('http://fadhil-a.herokuapp.com/api/random_kata_bijak.php?')
     json = req.json()
-    quote = json["result"]["quotes"]
-    author = json["result"]["author"]
+    quote = json["data"]["kataBijak"]
     await userge.send_sticker(-1001128045651, "CAACAgQAAxkDAAEDeJhgyLPTe0shLKykbafLA-rZk3CYZAAC4xoAAvEGNAYXtspUoZE5Nx4E")
     await userge.send_message(
-        -1001128045651, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ "+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.\n\n**Quotes Today:**\n`"+quote+"\n~ "+author+"`"
+        -1001128045651, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ "+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.\n\n**Quotes Today:**\n`"+quote+"`"
     )
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=True, can_send_media_messages=True, can_send_stickers=False, can_send_animations=True, can_invite_users=True, can_add_web_page_previews=True, can_use_inline_bots=True)
     )
