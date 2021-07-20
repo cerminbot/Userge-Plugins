@@ -24,6 +24,7 @@ async def job_close():
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
     month = ['Unknown', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
     tgl = now.strftime('%d')
+    tahun = now.strftime('%Y')
     jam = now.strftime('%H:%M')
     await userge.send_sticker(-1001128045651, "CAACAgQAAxkDAAEDfNhgygZBqbTlbOQ6Gk3CmtD-bnkRDAACLxsAAvEGNAY-qWSFYAqy3R4E")
     await userge.send_message(
@@ -45,6 +46,7 @@ async def job_open():
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
     month = ['Unknown', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
     tgl = now.strftime('%d')
+    tahun = now.strftime('%Y')
     jam = now.strftime('%H:%M')
     req = requests.get('http://fadhil-a.herokuapp.com/api/random_kata_bijak.php?')
     json = req.json()
