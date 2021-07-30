@@ -55,7 +55,7 @@ scheduler.start()
     'usage': "Ga ada",
     'examples': ["-"]},allow_private=False)
 async def job_open():
-    now = datetime.now(pytz.timez'Asia/Jakarta'))
+    now = datetime.now(pytz.timezone('Asia/Jakarta'))
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
     month = ['Unknown', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
     tgl = now.strftime('%d')
