@@ -40,7 +40,7 @@ async def job_close_ymoviez():
     tahun = now.strftime('%Y')
     jam = now.strftime('%H:%M')
     await userge.send_message(
-      -1001128045651, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ Jam : "+jam+"\n\n**🌗 Mode Malam Aktif**\n`Grup ditutup hingga jam 6 pagi, bagi yang mau leech atau mirror file bisa digrup satunya. Selamat beristirahat.....`"
+      -1001255283935, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ Jam : "+jam+"\n\n**🌗 Mode Malam Aktif**\n`Grup ditutup hingga jam 6 pagi, bagi yang mau leech atau mirror file bisa digrup satunya. Selamat beristirahat.....`"
     )
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=False, can_invite_users=True)
     )
@@ -83,7 +83,7 @@ async def job_open_ymoviez():
     by = json["data"]["by"]
     quote = json["data"]["quotes"]
     await userge.send_message(
-        -1001128045651, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ "+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.`\n\n**Quotes Today:**\n"+quote+"\n~ "+by
+        -1001255283935, "📆 "+days[now.weekday()]+", "+tgl+" "+month[now.month]+" "+tahun+"\n⏰ "+jam+"`\n\n🌗 Mode Malam Selesai\nSelamat pagi, grup kini telah dibuka semoga hari-harimu menyenangkan.`\n\n**Quotes Today:**\n"+quote+"\n~ "+by
     )
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=True, can_send_media_messages=True, can_send_stickers=True, can_send_animations=True, can_invite_users=True, can_add_web_page_previews=True, can_use_inline_bots=True)
     )
