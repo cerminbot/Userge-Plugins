@@ -72,7 +72,7 @@ async def job_open():
     await userge.set_chat_permissions(-1001128045651, ChatPermissions(can_send_messages=True, can_send_media_messages=True, can_send_stickers=False, can_send_animations=True, can_invite_users=True, can_add_web_page_previews=True, can_use_inline_bots=True)
     )
 async def job_open_ymoviez():
-    now = datetime.now(pytz.timez'Asia/Jakarta'))
+    now = datetime.now(pytz.timezone('Asia/Jakarta'))
     days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
     month = ['Unknown', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
     tgl = now.strftime('%d')
