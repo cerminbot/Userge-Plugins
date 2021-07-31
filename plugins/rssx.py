@@ -123,7 +123,7 @@ async def send_new_post(entries):
             ChatWriteForbidden, ChannelPrivate, ChatIdInvalid,
             UserNotParticipant, UsergeBotNotFound
         ):
-            out_str = f"/mir `{link}`"
+            out_str = f"/mirror2 `{link}`"
             if 'caption' in args:
                 args.update({'caption': out_str})
             else:
