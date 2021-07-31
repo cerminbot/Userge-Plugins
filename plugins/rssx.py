@@ -114,7 +114,7 @@ async def send_new_post(entries):
     for chat_id in RSS_CHAT_ID:
         args.update({'chat_id': chat_id})
         try:
-            if "1080p" in link or "2160p" in link or "Hindi" in link or "x265.10bit" in link:
+            if "720p" in link or "TGx" in link or "HEVC" in link or "x265" in link or "Mkvking" in link or "GalaxyRG" in link or "CracksHash" in link:
                 await asyncio.sleep(10)    
                 await send_rss_to_telegram(userge.bot, args, thumb)
             else:
@@ -123,7 +123,7 @@ async def send_new_post(entries):
             ChatWriteForbidden, ChannelPrivate, ChatIdInvalid,
             UserNotParticipant, UsergeBotNotFound
         ):
-            out_str = f"/mirror `{link}`"
+            out_str = f"/mir `{link}`"
             if 'caption' in args:
                 args.update({'caption': out_str})
             else:
