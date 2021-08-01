@@ -47,8 +47,8 @@ async def add_new_feed(url: str, l_u: str) -> str:
         out_str = f"""
 #ADDED_NEW_FEED_URL
 
-\t\t**FEED URL:** `{url}`
-\t\t**LAST UPDATED:** `{pub}`
+\t\t**URL Feed:** `{url}`
+\t\t**Terakhir Di Update:** `{pub}`
 """
         RSS_DICT[url] = [pub, now]
         if not TASK_RUNNING:
@@ -62,7 +62,7 @@ async def delete_feed(url: str) -> str:
         out_str = f"""
 #DELETED_FEED_URL
 
-\t\t**FEED_URL:** `{url}`
+\t\t**URL Feed:** `{url}`
 """
         del RSS_DICT[url]
         await RSS_COLLECTION.delete_one({'url': url})
@@ -75,6 +75,7 @@ async def send_new_post(entries):
     title = entries.get('title')
     link = entries.get('link')
     time = entries.get('published')
+    summary = entries.get('summary')
     thumb = None
     author = None
     author_link = None
@@ -91,13 +92,12 @@ async def send_new_post(entries):
         author = entries.get('authors')[0]['name'].split('/')[-1]
         author_link = entries.get('authors')[0]['href']
     out_str = f"""
-**New post Found**
+**RSS Feed Update**
 
-**Title:** `{title}`
-**Author:** [{author}]({author_link})
-**Last Updated:** `{time}`
+**Judul:** `{title}`
+**Ringkasan:** `{summary}`
 """
-    markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="View Post Online", url=link)]])
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="Lihat Postingan", url=link)]])
     if thumb:
         args = {
             'caption': out_str,
