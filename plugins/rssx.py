@@ -30,7 +30,7 @@ _LOG = logging.getLogger(__name__)
 
 RSS_DICT: Dict[str, List[datetime]] = {}
 
-RSS_COLLECTION = get_collection("RSS_TGX")  # Changed Collection Name cuz of Messsssss
+RSS_COLLECTION = get_collection("RSS_FEED")  # Changed Collection Name cuz of Messsssss
 TASK_RUNNING = False
 
 
