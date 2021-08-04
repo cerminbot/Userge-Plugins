@@ -121,7 +121,7 @@ async def send_new_post(entries):
             ChatWriteForbidden, ChannelPrivate, ChatIdInvalid,
             UserNotParticipant, UsergeBotNotFound
         ):
-            out_str = f"/mirror2 `{torrent}`"
+            out_str = f"/mirror2 `{torrent}`\n\n**{title}**"
             if 'caption' in args:
                 args.update({'caption': out_str})
             else:
