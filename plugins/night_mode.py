@@ -61,7 +61,7 @@ async def job_open():
     tgl = now.strftime('%d')
     tahun = now.strftime('%Y')
     jam = now.strftime('%H:%M')
-    req = requests.get('http://fadhil-a.herokuapp.com/api/random_quotes.php?')
+    req = requests.get('http://api.developers.eu.org/api/random_quotes.php?apikey=eI7BeGXnF83hoE9OE7rZ')
     json = req.json()
     quote = json["data"]["quotes"]
     by = json["data"]["by"]
@@ -78,7 +78,7 @@ async def job_open_ymoviez():
     tgl = now.strftime('%d')
     tahun = now.strftime('%Y')
     jam = now.strftime('%H:%M')
-    req = requests.get('http://fadhil-a.herokuapp.com/api/random_quotes.php?')
+    req = requests.get('http://api.developers.eu.org/api/random_quotes.php?apikey=eI7BeGXnF83hoE9OE7rZ')
     json = req.json()
     by = json["data"]["by"]
     quote = json["data"]["quotes"]
