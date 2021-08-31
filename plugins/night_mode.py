@@ -90,5 +90,5 @@ async def job_open_ymoviez():
     
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
 scheduler.add_job(job_open, trigger="cron", hour=6, minute=0)
-scheduler.add_job(job_open_ymoviez, trigger="cron", hour=6, minute=0)
+scheduler.add_job(job_open_ymoviez, trigger="cron", hour=6, minute=1)
 scheduler.start()
